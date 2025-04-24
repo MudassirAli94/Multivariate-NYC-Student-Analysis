@@ -28,12 +28,9 @@ class_df = class_df.drop(columns=["csd","school_code"])
 class_gb_df = class_df.groupby(["dbn"]).agg({"class_size":"sum","schoolwide_pupil_teacher_ratio":"mean"}).reset_index()
 
 regent_df = pd.read_csv("2010_math_regents.csv")
-print_df(regent_df,rows=5)
-sys.exit()
 
 
 #class_gb_df = class_df.groupby(["dbn","grade","program_type"]).agg({"class_size":"mean"}).reset_index()
-sys.exit()
 
 ap_df = pd.read_csv("2010_AP_scores.csv")
 ap_cols_list = ["dbn","school","ap_test_takers","total_exams_taken","num_exams_with_3_4_5_ap_scores"]
